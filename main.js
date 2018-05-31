@@ -4,7 +4,7 @@ const electron = require("electron");
 const path = require('path');
 const reload = require('electron-reload');
 const isDev = require('electron-is-dev');
-const { app, BrowserWindow } = electron;
+const { app, BrowserWindow, ipcMain, dialog } = electron;
 
 let mainWindow = null;
 
@@ -32,3 +32,12 @@ app.on("ready", () => {
         mainWindow = null;
     });
 });
+
+ipcMain.on("show-dialog", (e, arg) => {
+    const msgInfo = {
+        title: "My App Alert",
+        message: arg.message,
+        buttons: ["OK"]
+    };
+    dialog.showMessageBox(msgInfo);
+})
