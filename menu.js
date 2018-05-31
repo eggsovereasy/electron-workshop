@@ -1,4 +1,4 @@
-const {app, Menu} = require("electron");
+const {app, Menu, shell} = require("electron");
 const isDev = require("electron-is-dev");
 
 const buildMenu = () => {
@@ -52,6 +52,17 @@ const buildMenu = () => {
             ]
         });
     }
+
+    template.push({
+        role: "help",
+        submenu: [{
+            label: "Take me to Google",
+            accelerator: "CmdOrCtrl+G",
+            click() {
+                shell.openExternal("https://google.com");
+            }
+        }]
+    });
 
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
