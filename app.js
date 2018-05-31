@@ -14,4 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ipcRenderer.on("dialog-opened", (event, msg) => {
     console.log(msg);
+    var retVal = ipcRenderer.sendSync('synchronous-message', 'ping');
+    console.log(retVal);
 });

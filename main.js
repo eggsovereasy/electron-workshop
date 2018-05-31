@@ -42,3 +42,8 @@ ipcMain.on("show-dialog", (e, arg) => {
     dialog.showMessageBox(msgInfo);
     e.sender.send('dialog-opened', 'it got opened');
 })
+
+ipcMain.on('synchronous-message', (event, arg) => {
+    console.log(arg);
+    event.returnValue = 'pong';
+})
