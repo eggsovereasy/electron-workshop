@@ -40,4 +40,5 @@ ipcMain.on("show-dialog", (e, arg) => {
         buttons: ["OK"]
     };
     dialog.showMessageBox(msgInfo);
+    e.sender.send('dialog-opened', 'it got opened');
 })

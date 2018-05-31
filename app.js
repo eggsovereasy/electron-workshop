@@ -11,3 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ipcRenderer.send("show-dialog", {message: "The button was clicked"});
     });
 });
+
+ipcRenderer.on("dialog-opened", (msg) => {
+    console.log(msg);
+});
