@@ -1,5 +1,6 @@
 "use strict";
 
+const menus = require("./menu");
 const electron = require("electron");
 const path = require('path');
 const reload = require('electron-reload');
@@ -21,6 +22,7 @@ app.on("window-all-closed", () => {
 
 app.on("ready", () => {
     mainWindow = new BrowserWindow({width: 800, height: 600});
+    menus.buildMenu();
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     if (isDev) {
         mainWindow.webContents.openDevTools();
