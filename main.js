@@ -23,7 +23,7 @@ app.on("window-all-closed", () => {
 app.on("ready", () => {
     mainWindow = new BrowserWindow({width: 800, height: 600});
     menus.buildMenu();
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/dadjokes.html`);
     if (isDev) {
         mainWindow.webContents.openDevTools();
     }
