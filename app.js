@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-ipcRenderer.on("dialog-opened", (msg) => {
+ipcRenderer.on("dialog-opened", (event, msg) => {
     console.log(msg);
 });
