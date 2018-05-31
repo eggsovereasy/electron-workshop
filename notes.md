@@ -38,3 +38,24 @@
 ## lifecycle ##
 - process (main.js)
 - renderers (html files)
+
+## modules ##
+### process module ###
+- app, set default file program, etc
+- ipc, communicate between processes
+- dialog, native dialogs (open/save/print/etc)
+- menu, create menues
+- power-monitor, power status stuff, suspend sleep, etc
+- tray, notification stuff
+
+### render modules ###
+- ipc
+- remote
+- web-frame, host external content (sandboxes it, like a web browser)
+
+### both ###
+- clipboard
+- crash-reporter
+- native-image
+- screen
+- shell
